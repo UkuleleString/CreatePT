@@ -8,12 +8,13 @@ while True:
 
     print("Type 'Start' to start!")
     print("Type 'Load' to load your save file!")
-
-    if (input().lower() == "start"):
+    playerInput = input().lower()
+    
+    if (playerInput == "start"):
         print("started game")
         break
 
-    elif (input().lower() == "load"):
+    elif (playerInput == "load"):
         print("loaded save")
         break
     
