@@ -20,11 +20,16 @@ class person():
         self.weight = weight
         personGender = gender
         personEthnicity = ethnicity
+        print("Mia: I am " + personEthnicity + "!")
+
+    def personSpeak(self):
+        print("Mia: I weigh " + self.weight + "!")
 
 Mia = person("4'11","108 lbs", "female", "Mixed")
 
 print("This is Mia's height: " + Mia.height)
 print("This is Mia's weight: " + Mia.weight)
+Mia.personSpeak()
 
 print("This will not work because you can't access this varable without the 'self' at the beginning.")
 print(Mia.personGender)
