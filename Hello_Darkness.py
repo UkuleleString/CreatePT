@@ -11,9 +11,9 @@ thisIsADictionary = {"key":"value" , "five":5}
 
 function()
 print("This shows the value associated with the key in the dictionary: " + thisIsADictionary["key"])
-print("This shows the value in the 2 spot of the list: " + thisIsAList[2])
+print("This shows the value in the 2 spot of the list: ", thisIsAList[2])
 
-class person(self, height, weight, gender, ethnicity):
+class person():
 
     def __init__(self, height, weight, gender, ethnicity):
         self.height = height
