@@ -49,7 +49,7 @@ class characterCreation():
                 self.intelligence = random.randint(1, 7)
                 self.wisdom = random.randint(1, 7)
                 self.charisma = random.randint(1, 7)
-                print("Hello!" + self.name)
+                print("Hello! " + self.name)
                 print("Your strength stat is: ", self.strength)
                 print("Your dexterity stat is: ", self.dexterity)
                 print("Your constitution stat is: ", self.constitution)
@@ -105,3 +105,6 @@ class characterCreation():
                 print()
                 time.sleep(1)
                 pass
+
+if __name__ == "__main__":
+    player = characterCreation()
