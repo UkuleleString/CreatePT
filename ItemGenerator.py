@@ -1,0 +1,3 @@
+def weaponCreate():
+
+    createdWeapon = {"name": }
