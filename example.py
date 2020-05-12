@@ -1,7 +1,10 @@
 import time
+import random
 
 def function():
     print("To make a function, use use 'def' to begin to define the function")
+
+thisIsARandomInteger = random.randint(5,10)
 
 string = "this is a string"
 thisIsAnInteger = 7
