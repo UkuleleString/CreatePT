@@ -31,3 +31,6 @@ class createPlayer():
        self.name = name 
     if (playerLevel >= 1 && playerLevel <= 5):
         lowEnemyStuff = {"Attack": }  
+  def enemy_generator():
+    if (playerLevel >= 1 && playerLevel <= 5):
+        lowEnemyStuff = {"Attack": }
