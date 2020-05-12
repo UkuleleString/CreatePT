@@ -1,4 +1,5 @@
 import pickle
+import random
 
 while True:
     print("********************")
@@ -22,4 +23,5 @@ while True:
         print("Fucking type something right you twat")
 
 def enemy_generator():
-     
+    if (playerLevel >= 1 && playerLevel <= 5):
+        lowEnemyStuff = {"Attack": }  
