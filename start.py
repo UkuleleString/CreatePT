@@ -23,3 +23,8 @@ while True:
 
 def enemy_generator():
      
+
+import tkinter
+class createPlayer():
+    def playerChar(name, weapon, level, stats):
+       self.name = name 
