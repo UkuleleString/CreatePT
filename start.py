@@ -20,3 +20,6 @@ while True:
     
     else: 
         print("Fucking type something right you twat")
+
+def enemy_generator():
+     
