@@ -23,14 +23,11 @@ while True:
         print("Fucking type something right you twat")
 
 def enemy_generator():
-<<<<<<< HEAD
      
 
 import tkinter
 class createPlayer():
     def playerChar(name, weapon, level, stats):
        self.name = name 
-=======
     if (playerLevel >= 1 && playerLevel <= 5):
         lowEnemyStuff = {"Attack": }  
->>>>>>> e8bd751ce3437a61a7cce02708c652b2a7eae437
