@@ -1,5 +1,6 @@
 import pickle
 import random
+import tkinter
 
 while True:
     print("********************")
@@ -23,13 +24,14 @@ while True:
         print("Fucking type something right you twat")
 
 def enemy_generator():
-    if (playerLevel >= 1 && playerLevel <= 5):
-        lowEnemyStuff = {"Attack": random()}
      
 
-import tkinter
+
 class createPlayer():
     def playerChar(name, weapon, level, stats):
-       self.name = name 
-    
-  
+        self.name = name 
+        if (playerLevel >= 1 && playerLevel <= 5):
+        lowEnemyStuff = {"Attack": }  
+    def enemy_generator():
+        if (playerLevel >= 1 && playerLevel <= 5):
+        lowEnemyStuff = {"Attack": }
