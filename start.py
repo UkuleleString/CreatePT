@@ -23,6 +23,17 @@ while True:
     else: 
         print("Fucking type something right you twat")
 
+def createPlayer():
+    playerDictionary = {"name":input("Please input your name:") , "level":1 , "health":10 , "pdef":random.randint(0, 3) , "mdef":random.randint(0, 3) , "atk":random.randint(0, 3) , "matk":random.randint(0, 3)}
+    return(playerDictionary)
+variable = createPlayer()
+print("Your level is: ")
+print("Your health is: ")
+print("Your physical defense is: ")
+print("Your magical defense: ")
+print("Your attack power is: ")
+print("Your magical attack power is: ")
+
 def enemy_generator(playerLevel):
     nameList = ["Bob", "James", "Carl", "Xenowrath"]
     enemyName = nameList[random.randint(0,4)]
@@ -57,14 +68,4 @@ def enemy_generator(playerLevel):
         
 enemy_generator(random.randint(1,16))   
 
-def createPlayer():
-    playerDictionary = {"name":input("Please input your name:") , "level":1 , "health":10 , "pdef":random.randint(0, 3) , "mdef":random.randint(0, 3) , "atk":random.randint(0, 3) , "matk":random.randint(0, 3)}
-    return(playerDictionary)
-variable = createPlayer()
-print("Your level is: ")
-print("Your health is: ")
-print("Your physical defense is: ")
-print("Your magical defense: ")
-print("Your attack power is: ")
-print("Your magical attack power is: ")
 
