@@ -24,18 +24,7 @@ while True:
         print("Fucking type something right you twat")
 
 def enemy_generator():
-     
 
-
-<<<<<<< HEAD
-thisIsADictionary = {"name":input("Please input your name:") , "health":10 , "pdef":random.randint(0, 3) , "mdef":random.randint(0, 3) , "atk":random.randint(0, 3) , "matk":random.randint(0, 3)}
-=======
-class createPlayer():
-    def playerChar(name, weapon, level, stats):
-        self.name = name 
-        if (playerLevel >= 1 && playerLevel <= 5):
-        lowEnemyStuff = {"Attack": }  
-    def enemy_generator():
-        if (playerLevel >= 1 && playerLevel <= 5):
-        lowEnemyStuff = {"Attack": }
->>>>>>> b148d2352127ac895499a5aba348a79b228e910b
+playerDictionary = {"name":input("Please input your name:") , "health":10 , "pdef":random.randint(0, 3) , "mdef":random.randint(0, 3) , "atk":random.randint(0, 3) , "matk":random.randint(0, 3)}
+def createPlayer(playerDictionary):
+    print(playerDictionary["name"])
