@@ -23,13 +23,7 @@ while True:
         print("Fucking type something right you twat")
 
 def enemy_generator():
-    if (playerLevel >= 1 && playerLevel <= 5):
-        lowEnemyStuff = {"Attack": random()}
      
 
-import tkinter
-class createPlayer():
-    def playerChar(name, weapon, level, stats):
-       self.name = name 
-    
-  
+
+thisIsADictionary = {"name":input("Please input your name:") , "health":10 , "pdef":random.randint(0, 3) , "mdef":random.randint(0, 3) , "atk":random.randint(0, 3) , "matk":random.randint(0, 3)}
