@@ -1,5 +1,6 @@
 import pickle
 import random
+import tkinter
 
 while True:
     print("********************")
@@ -53,10 +54,8 @@ def enemy_generator(playerLevel):
         print(That is not a valid player level)
         
 enemy_generator(random.randint(1,16))   
+def enemy_generator():
+     
 
-import tkinter
-class createPlayer():
-    def playerChar(name, weapon, level, stats):
-       self.name = name 
-    
-  
+
+thisIsADictionary = {"name":input("Please input your name:") , "health":10 , "pdef":random.randint(0, 3) , "mdef":random.randint(0, 3) , "atk":random.randint(0, 3) , "matk":random.randint(0, 3)}
