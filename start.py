@@ -56,7 +56,6 @@ def enemy_generator(playerLevel):
         pass 
         
 enemy_generator(random.randint(1,16))   
-def enemy_generator():
 
 def createPlayer():
     playerDictionary = {"name":input("Please input your name:") , "level":1 , "health":10 , "pdef":random.randint(0, 3) , "mdef":random.randint(0, 3) , "atk":random.randint(0, 3) , "matk":random.randint(0, 3)}
