@@ -27,7 +27,7 @@ def createPlayer():
     playerDictionary = {"name":input("Please input your name:") , "level":1 , "health":10 , "pdef":random.randint(0, 3) , "mdef":random.randint(0, 3) , "atk":random.randint(0, 3) , "matk":random.randint(0, 3) , "gold":0}
     return(playerDictionary)
 variable = createPlayer()
-print("Your level is: ")
+print("Your level is: " + variable["level"])
 print("Your health is: ")
 print("Your physical defense is: ")
 print("Your magical defense: ")
