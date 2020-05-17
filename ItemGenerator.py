@@ -14,6 +14,7 @@ def itemCreation(playerLevel:5):
         createdItem["itemmATT"] = random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel)
         createdItem["itemmDEF"] = random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel)
         
+    return createdItem
 
 
 print(itemCreation(5))
