@@ -2,21 +2,66 @@ import random
 def itemCreation(playerLevel:5):
 
     def itemNameGenerator(category):
-        offensiveGodNames = []
         if category == 'Sword':
-            nameFormat = random.choice()
-            if nameFormat == 0:
-                return "The Sword of " + offensiveGodNames
-            elif nameFormat == 1:
-                return "The Blade of " + offensiveGodNames
-            elif nameFormat == 2:
-                return offensiveGodNames + "'s Edge"
-            elif nameFormat == 3:
-                return offensiveGodNames + "'s Razor"
-            elif nameFormat == 4:
-                return "The Decline of " + offensiveGodNames
-            elif nameFormat == 5:
-                return offensiveGodNames + "'s Descent"
+            swordGodNames = []
+            godName = random.choice(swordGodNames)
+            swordFormats = [
+                "The Sword of " + godName,
+                "The Blade of " + godName,
+                godName + "'s Edge", 
+                godName + "'s Razor", 
+                "The Decline of " + godName,
+                godName + "'s Descent"]
+            name = random.choice(swordFormats)
+
+        if category == 'Bow':
+            bowGodNames = []
+            godName = random.choice(bowGodNames)
+            swordFormats = [
+                "The Bow of " + godName,
+                "The Secret of " + godName,
+                godName + "'s Piercer", 
+                godName + "'s Kiss", 
+                "The Flight of " + godName,
+                godName + "'s Disaster"]
+            name = random.choice(swordFormats)
+
+        if category == 'Staff':
+            staffGodNames = []
+            godName = random.choice(staffGodNames)
+            swordFormats = [
+                "The Staff of " + godName,
+                "The Blade of " + godName,
+                godName + "'s Edge", 
+                godName + "'s Razor", 
+                "The Decline of " + godName,
+                godName + "'s Descent"]
+            name = random.choice(swordFormats)
+        
+        if category == 'Tome':
+            tomeGodNames = []
+            godName = random.choice(tomeGodNames)
+            swordFormats = [
+                "The Sword of " + godName,
+                "The Blade of " + godName,
+                godName + "'s Edge", 
+                godName + "'s Razor", 
+                "The Decline of " + godName,
+                godName + "'s Descent"]
+            name = random.choice(swordFormats)
+
+        if category == 'Armor':
+            armorGodNames = []
+            godName = random.choice(armorGodNames)
+            swordFormats = [
+                "The Sword of " + godName,
+                "The Blade of " + godName,
+                godName + "'s Edge", 
+                godName + "'s Razor", 
+                "The Decline of " + godName,
+                godName + "'s Descent"]
+            name = random.choice(swordFormats)
+        return name
             
 
     createdItem = {"name":None, "type":None, "itemHP":None, "itemATT":None, "itemDEF":None, "itemmATT":None, "itemmDEF":None}
