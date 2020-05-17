@@ -1,7 +1,23 @@
 import random
 def itemCreation(playerLevel:5):
 
-    def itemNameGenerator(weaponType):
+    def itemNameGenerator(category):
+        offensiveGodNames = []
+        if category == 'Sword':
+            nameFormat = random.choice()
+            if nameFormat == 0:
+                return "The Sword of " + offensiveGodNames
+            elif nameFormat == 1:
+                return "The Blade of " + offensiveGodNames
+            elif nameFormat == 2:
+                return offensiveGodNames + "'s Edge"
+            elif nameFormat == 3:
+                return offensiveGodNames + "'s Razor"
+            elif nameFormat == 4:
+                return "The Decline of " + offensiveGodNames
+            elif nameFormat == 5:
+                return offensiveGodNames + "'s Descent"
+            
 
     createdItem = {"name":None, "type":None, "itemHP":None, "itemATT":None, "itemDEF":None, "itemmATT":None, "itemmDEF":None}
 
