@@ -49,7 +49,7 @@ def enemy_generator(playerLevel):
         if(lowEnemyStuff["magDefense"] <= 0):
             lowEnemyStuff["magDefense"] = 0
         if(lowEnemyStuff["HP"] <= 0):
-        lowEnemyStuff["HP"] = 1
+            lowEnemyStuff["HP"] = 1
         print("The enemy you are up against " + lowEnemyStuff["EnemyName"])
         print(lowEnemyStuff["EnemyName"] + " has an attack level of " , lowEnemyStuff["Attack"])
         print(lowEnemyStuff["EnemyName"] + " has a defense level of " , lowEnemyStuff["Defense"])
