@@ -42,12 +42,6 @@ def createPlayer():
             print("You live in a rural area. Your attack increases by 1." + (playerDictionary["atk"] + 1))
         elif(statDict["att"] == 0):
             print("You live in a city area. Physical defense increases by 1." + (playerDictionary["pdef"] + 1))
-            if(playerPref == "academics"):
-                print("You were more interested in academics. Your magic attack raised by 1." + (playerDictionary["matk"] + 1))
-            elif(playerPref == "sports"):
-                print("You were more interested in sports. Your health increased by 2." + (playerDictionary["health"] + 2))
-            else:
-                print("That is not a valid answer")
         else:
             print("That is not a valid input.")
         playerPref = input("Were you more into academics or sports?")
