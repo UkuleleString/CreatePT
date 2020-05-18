@@ -5,7 +5,8 @@ def itemCreation(playerLevel:5):
         if category == 'Sword':
             swordGodNames = []
             godName = random.choice(swordGodNames)
-            swordFormats = [
+            godName2 = random.choice(swordGodNames)
+            nameFormats = [
                 "The Sword of " + godName,
                 "The Blade of " + godName,
                 godName + "'s Edge", 
@@ -13,49 +14,55 @@ def itemCreation(playerLevel:5):
                 "The Decline of " + godName,
                 godName + "'s Descent",
                 "The Battle of " + godName + " and " + godName2]
+            name = random.choice(nameFormats)
 
         if category == 'Bow':
             bowGodNames = []
             godName = random.choice(bowGodNames)
-            swordFormats = [
+            nameFormats = [
                 "The Bow of " + godName,
                 "The Secret of " + godName,
                 godName + "'s Piercer", 
                 godName + "'s Kiss", 
                 "The Flight of " + godName,
                 godName + "'s Disaster"]
-            name = random.choice(swordFormats)
+            name = random.choice(nameFormats)
 
         if category == 'Staff':
             staffGodNames = []
             godName = random.choice(staffGodNames)
-            swordFormats = [
+            nameFormats = [
                 "The Staff of " + godName,
                 "The Aura of " + godName,
                 godName + "'s Will", 
                 godName + "'s Desire", 
                 "The Passion of " + godName,
                 godName + "'s Fear"]
+            name = random.choice(nameFormats)
         
         if category == 'Tome':
             tomeGodNames = []
             godName = random.choice(tomeGodNames)
+            nameFormats = [
                 "The Tome of " + godName,
                 "The Knowledge of " + godName,
                 godName + "'s Mind", 
                 godName + "'s Mortal Grimoire", 
                 "The Word of " + godName,
                 godName + "'s Lessons"]
+            name = random.choice(nameFormats)
 
         if category == 'Armor':
             armorGodNames = []
             godName = random.choice(armorGodNames)
+            nameFormats = [
                 "The Armor of " + godName,
                 "The Clothes of " + godName,
                 godName + "'s Skeleton", 
                 godName + "'s Defiance", 
                 "The Strength of " + godName,
                 godName + "'s Fur"]
+            name = random.choice(nameFormats)
         return name
             
 
