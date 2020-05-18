@@ -35,8 +35,8 @@ print("Your attack power is: " , variable["atk"])
 print("Your magical attack power is: " , variable["matk"])
 
 def enemy_generator(playerLevel):
-    nameList = ["Bob", "James", "Carl", "Xenowrath"]
-    enemyName = nameList[random.randint(0,3)]
+    nameList = ["Bob", "James", "Carl", "Xenowrath", "Grifllas", "Cyngia", "Golsenx", "Obis", "Suroa", "Sceilops", "Rachaug"]
+    enemyName = nameList[random.randint(0,10)]
     print(playerLevel)
     if (playerLevel >= 1 and playerLevel <= 5):
         lowEnemyStuff = {"Attack": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), "Defense": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), "magAttack": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), "magDefense": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), "HP": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), "EnemyName": enemyName}
