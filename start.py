@@ -26,14 +26,17 @@ def createPlayer():
     playerDictionary = {"name":input("Please input your name:") , "level":1 , "health":10 , "pdef":random.randint(0, 3) , "mdef":random.randint(0, 3) , "atk":random.randint(0, 3) , "matk":random.randint(0, 3) , "gold":0 , "weapon":"bare hands" , "armor":"commoner clothes" , "stageNum":1}
     return(playerDictionary)
 variable = createPlayer()
-print(variable["name"])
-print("Your level is: " , variable["level"])
-print("Your health is: " , variable["health"])
-print("Your physical defense is: " , variable["pdef"])
-print("Your magical defense: " , variable["mdef"])
-print("Your attack power is: " , variable["atk"])
-print("Your magical attack power is: " , variable["matk"])
-print("Beginning at stage: " , variable["stageNum"])
+def stats():
+    print(variable["name"])
+    print("Your level is: " , variable["level"])
+    print("Your health is: " , variable["health"])
+    print("Your physical defense is: " , variable["pdef"])
+    print("Your magical defense: " , variable["mdef"])
+    print("Your attack power is: " , variable["atk"])
+    print("Your magical attack power is: " , variable["matk"])
+    print("Beginning at stage: " , variable["stageNum"])
+stats()
+
 
 def enemy_generator(playerLevel):
     nameList = ["Bob", "James", "Carl", "Xenowrath"]
@@ -57,16 +60,6 @@ def enemy_generator(playerLevel):
         print(midEnemyStuff["EnemyName"] + " has " , midEnemyStuff["HP"] , " health")
     elif (playerLevel >= 11 and playerLevel <= 15):
         highEnemyStuff = {"Attack": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "Defense": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "magAttack": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "magDefense": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "HP": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "EnemyName": enemyName}
-        if(highEnemyStuff["Attack"] <= 0):
-            highEnemyStuff["Attack"] = 0
-        if(highEnemyStuff["Defense"] <= 0):
-            highEnemyStuff["Defense"] = 0
-        if(highEnemyStuff["magAttack"] <= 0):
-            highEnemyStuff["magAttack"] = 0
-        if(highEnemyStuff["magDefense"] <= 0):
-            highEnemyStuff["magDefense"] = 0
-        if(highEnemyStuff["HP"] <= 0):
-            highEnemyStuff["HP"] = 1
         print("The enemy you are up against is named " + highEnemyStuff["EnemyName"])
         print(highEnemyStuff["EnemyName"] + " has an attack level of " , highEnemyStuff["Attack"])
         print(highEnemyStuff["EnemyName"] + " has a defense level of " , highEnemyStuff["Defense"])
