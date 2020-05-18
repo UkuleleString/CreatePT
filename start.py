@@ -78,7 +78,7 @@ def enemy_generator(playerLevel):
         print(midEnemyStats["EnemyName"] + " has a magic defense level of " , midEnemyStats["magDefense"])
         print(midEnemyStats["EnemyName"] + " has " , midEnemyStats["HP"] , " health")
     elif (playerLevel >= 11 and playerLevel <= 15):
-<<<<<<< HEAD
+
         highEnemyStats = {"Attack": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "Defense": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "magAttack": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "magDefense": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "HP": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "EnemyName": enemyName}
         if(highEnemyStats["Attack"] <= 0):
             highEnemyStats["Attack"] = 0
