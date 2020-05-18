@@ -37,46 +37,68 @@ print("Beginning at stage: " , variable["stageNum"])
 
 def enemy_generator(playerLevel):
     nameList = ["Bob", "James", "Carl", "Xenowrath"]
-    enemyName = nameList[random.randint(0,4)]
-    print(playerLevel)
+    enemyName = nameList[random.randint(0,3)]
     if (playerLevel >= 1 and playerLevel <= 5):
-        lowEnemyStuff = {"Attack": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), "Defense": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), "magAttack": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), "magDefense": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), "HP": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), "EnemyName": enemyName}
-        print("The enemy you are up against " + lowEnemyStuff["EnemyName"])
-        print(lowEnemyStuff["EnemyName"] + " has an attack level of " , lowEnemyStuff["Attack"])
-        print(lowEnemyStuff["EnemyName"] + " has a defense level of " , lowEnemyStuff["Defense"])
-        print(lowEnemyStuff["EnemyName"] + " has a magic attack level of " , lowEnemyStuff["magAttack"])
-        print(lowEnemyStuff["EnemyName"] + " has a magic defense level of " , lowEnemyStuff["magDefense"])
-        print(lowEnemyStuff["EnemyName"] + " has " , lowEnemyStuff["HP"] , " health")
+        lowEnemyStats = {"Attack": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), "Defense": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), "magAttack": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), "magDefense": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), "HP": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), "EnemyName": enemyName}
+        if(lowEnemyStats["Attack"] <= 0):
+            lowEnemyStats["Attack"] = 0
+        if(lowEnemyStats["Defense"] <= 0):
+            lowEnemyStats["Defense"] = 0
+        if(lowEnemyStats["magAttack"] <= 0):
+            lowEnemyStats["magAttack"] = 0
+        if(lowEnemyStats["magDefense"] <= 0):
+            lowEnemyStats["magDefense"] = 0
+        if(lowEnemyStats["HP"] <= 0):
+            lowEnemyStats["HP"] = 1
+        print("The enemy you are up against " + lowEnemyStats["EnemyName"])
+        print(lowEnemyStats["EnemyName"] + " has an attack level of " , lowEnemyStats["Attack"])
+        print(lowEnemyStats["EnemyName"] + " has a defense level of " , lowEnemyStats["Defense"])
+        print(lowEnemyStats["EnemyName"] + " has a magic attack level of " , lowEnemyStats["magAttack"])
+        print(lowEnemyStats["EnemyName"] + " has a magic defense level of " , lowEnemyStats["magDefense"])
+        print(lowEnemyStats["EnemyName"] + " has " , lowEnemyStats["HP"] , " health")
     elif (playerLevel >= 6 and playerLevel <= 10):
-        midEnemyStuff = {"Attack": random.randint(1,4)*playerLevel + random.randint(-1*playerLevel,playerLevel), "Defense": random.randint(1,4)*playerLevel + random.randint(-1*playerLevel,playerLevel), "magAttack": random.randint(1,4)*playerLevel + random.randint(-1*playerLevel,playerLevel), "magDefense": random.randint(1,4)*playerLevel + random.randint(-1*playerLevel,playerLevel), "HP": random.randint(1,4)*playerLevel + random.randint(-1*playerLevel,playerLevel), "EnemyName": enemyName}
-        print("The enemy you are up against is named " + midEnemyStuff["EnemyName"])
-        print(midEnemyStuff["EnemyName"] + " has an attack level of " , midEnemyStuff["Attack"])
-        print(midEnemyStuff["EnemyName"] + " has a defense level of " , midEnemyStuff["Defense"])
-        print(midEnemyStuff["EnemyName"] + " has a magic attack level of " , midEnemyStuff["magAttack"])
-        print(midEnemyStuff["EnemyName"] + " has a magic defense level of " , midEnemyStuff["magDefense"])
-        print(midEnemyStuff["EnemyName"] + " has " , midEnemyStuff["HP"] , " health")
+        midEnemyStats = {"Attack": random.randint(1,4)*playerLevel + random.randint(-1*playerLevel,playerLevel), "Defense": random.randint(1,4)*playerLevel + random.randint(-1*playerLevel,playerLevel), "magAttack": random.randint(1,4)*playerLevel + random.randint(-1*playerLevel,playerLevel), "magDefense": random.randint(1,4)*playerLevel + random.randint(-1*playerLevel,playerLevel), "HP": random.randint(1,4)*playerLevel + random.randint(-1*playerLevel,playerLevel), "EnemyName": enemyName}
+        if(midEnemyStats["Attack"] <= 0):
+            midEnemyStats["Attack"] = 0
+        if(midEnemyStats["Defense"] <= 0):
+            midEnemyStats["Defense"] = 0
+        if(midEnemyStats["magAttack"] <= 0):
+            midEnemyStats["magAttack"] = 0
+        if(midEnemyStats["magDefense"] <= 0):
+            midEnemyStats["magDefense"] = 0
+        if(midEnemyStats["HP"] <= 0):
+            midEnemyStats["HP"] = 1
+        print("The enemy you are up against is named " + midEnemyStats["EnemyName"])
+        print(midEnemyStats["EnemyName"] + " has an attack level of " , midEnemyStats["Attack"])
+        print(midEnemyStats["EnemyName"] + " has a defense level of " , midEnemyStats["Defense"])
+        print(midEnemyStats["EnemyName"] + " has a magic attack level of " , midEnemyStats["magAttack"])
+        print(midEnemyStats["EnemyName"] + " has a magic defense level of " , midEnemyStats["magDefense"])
+        print(midEnemyStats["EnemyName"] + " has " , midEnemyStats["HP"] , " health")
     elif (playerLevel >= 11 and playerLevel <= 15):
-        highEnemyStuff = {"Attack": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "Defense": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "magAttack": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "magDefense": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "HP": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "EnemyName": enemyName}
-        if(highEnemyStuff["Attack"] <= 0):
-            highEnemyStuff["Attack"] = 0
-        if(highEnemyStuff["Defense"] <= 0):
-            highEnemyStuff["Defense"] = 0
-        if(highEnemyStuff["magAttack"] <= 0):
-            highEnemyStuff["magAttack"] = 0
-        if(highEnemyStuff["magDefense"] <= 0):
-            highEnemyStuff["magDefense"] = 0
-        if(highEnemyStuff["HP"] <= 0):
-            highEnemyStuff["HP"] = 1
-        print("The enemy you are up against is named " + highEnemyStuff["EnemyName"])
-        print(highEnemyStuff["EnemyName"] + " has an attack level of " , highEnemyStuff["Attack"])
-        print(highEnemyStuff["EnemyName"] + " has a defense level of " , highEnemyStuff["Defense"])
-        print(highEnemyStuff["EnemyName"] + " has a magic attack level of " , highEnemyStuff["magAttack"])
-        print(highEnemyStuff["EnemyName"] + " has a magic defense level of " , highEnemyStuff["magDefense"])
-        print(highEnemyStuff["EnemyName"] + " has " , highEnemyStuff["HP"] , " health")
+        highEnemyStats = {"Attack": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "Defense": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "magAttack": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "magDefense": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "HP": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "EnemyName": enemyName}
+        if(highEnemyStats["Attack"] <= 0):
+            highEnemyStats["Attack"] = 0
+        if(highEnemyStats["Defense"] <= 0):
+            highEnemyStats["Defense"] = 0
+        if(highEnemyStats["magAttack"] <= 0):
+            highEnemyStats["magAttack"] = 0
+        if(highEnemyStats["magDefense"] <= 0):
+            highEnemyStats["magDefense"] = 0
+        if(highEnemyStats["HP"] <= 0):
+            highEnemyStats["HP"] = 1
+        print("The enemy you are up against is named " + highEnemyStats["EnemyName"])
+        print(highEnemyStats["EnemyName"] + " has an attack level of " , highEnemyStats["Attack"])
+        print(highEnemyStats["EnemyName"] + " has a defense level of " , highEnemyStats["Defense"])
+        print(highEnemyStats["EnemyName"] + " has a magic attack level of " , highEnemyStats["magAttack"])
+        print(highEnemyStats["EnemyName"] + " has a magic defense level of " , highEnemyStats["magDefense"])
+        print(highEnemyStats["EnemyName"] + " has " , highEnemyStats["HP"] , " health")
     else:
         print("That is not a valid player level")
         pass 
+        return(lowEnemyStats)
+        return(midEnemyStats)
+        return(highEnemyStats)
         
-enemy_generator(random.randint(1,16))   
+enemy_generator(random.randint(1,15))   
 
 
