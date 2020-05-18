@@ -152,6 +152,6 @@ def enemy_generator(playerLevel):
         pass
         
 
-enemy_generator(random.randint(1,15))   
+enemy_generator(player["level"])   
 
 
