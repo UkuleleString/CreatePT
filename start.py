@@ -23,20 +23,18 @@ while True:
         print("Fricking type something right you twat")
 
 def createPlayer():
-    playerDictionary = {"name":input("Please input your name:") , "level":1 , "health":10 , 
-    "pdef":random.randint(0, 3) , "mdef":random.randint(0, 3) , "atk":random.randint(0, 3) , 
-    "matk":random.randint(0, 3) , "gold":0 , "weapon":"bare hands" , "armor":"commoner clothes" , "stageNum":1}
+    playerDictionary = {"name":input("Please input your name:") , "level":1 , "health":10 , "pdef":random.randint(0, 3) , "mdef":random.randint(0, 3) , "atk":random.randint(0, 3) , "matk":random.randint(0, 3) , "gold":0 , "weapon":"bare hands" , "armor":"commoner clothes" , "stageNum":1}
     return(playerDictionary)
-variable = createPlayer()
+player = createPlayer()
 def stats():
-    print(variable["name"])
-    print("Your level is: " , variable["level"])
-    print("Your health is: " , variable["health"])
-    print("Your physical defense is: " , variable["pdef"])
-    print("Your magical defense: " , variable["mdef"])
-    print("Your attack power is: " , variable["atk"])
-    print("Your magical attack power is: " , variable["matk"])
-    print("Beginning at stage: " , variable["stageNum"])
+    print(player["name"])
+    print("Your level is: " , player["level"])
+    print("Your health is: " , player["health"])
+    print("Your physical defense is: " , player["pdef"])
+    print("Your magical defense: " , player["mdef"])
+    print("Your attack power is: " , player["atk"])
+    print("Your magical attack power is: " , player["matk"])
+    print("Beginning at stage: " , player["stageNum"])
 stats()
 
 
