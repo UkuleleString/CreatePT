@@ -11,8 +11,8 @@ def itemCreation(playerLevel:5):
                 godName + "'s Edge", 
                 godName + "'s Razor", 
                 "The Decline of " + godName,
-                godName + "'s Descent"]
-            name = random.choice(swordFormats)
+                godName + "'s Descent",
+                "The Battle of " + godName + " and " + godName2]
 
         if category == 'Bow':
             bowGodNames = []
@@ -31,36 +31,31 @@ def itemCreation(playerLevel:5):
             godName = random.choice(staffGodNames)
             swordFormats = [
                 "The Staff of " + godName,
-                "The Blade of " + godName,
-                godName + "'s Edge", 
-                godName + "'s Razor", 
-                "The Decline of " + godName,
-                godName + "'s Descent"]
-            name = random.choice(swordFormats)
+                "The Aura of " + godName,
+                godName + "'s Will", 
+                godName + "'s Desire", 
+                "The Passion of " + godName,
+                godName + "'s Fear"]
         
         if category == 'Tome':
             tomeGodNames = []
             godName = random.choice(tomeGodNames)
-            swordFormats = [
-                "The Sword of " + godName,
-                "The Blade of " + godName,
-                godName + "'s Edge", 
-                godName + "'s Razor", 
-                "The Decline of " + godName,
-                godName + "'s Descent"]
-            name = random.choice(swordFormats)
+                "The Tome of " + godName,
+                "The Knowledge of " + godName,
+                godName + "'s Mind", 
+                godName + "'s Mortal Grimoire", 
+                "The Word of " + godName,
+                godName + "'s Lessons"]
 
         if category == 'Armor':
             armorGodNames = []
             godName = random.choice(armorGodNames)
-            swordFormats = [
-                "The Sword of " + godName,
-                "The Blade of " + godName,
-                godName + "'s Edge", 
-                godName + "'s Razor", 
-                "The Decline of " + godName,
-                godName + "'s Descent"]
-            name = random.choice(swordFormats)
+                "The Armor of " + godName,
+                "The Clothes of " + godName,
+                godName + "'s Skeleton", 
+                godName + "'s Defiance", 
+                "The Strength of " + godName,
+                godName + "'s Fur"]
         return name
             
 
