@@ -23,6 +23,18 @@ while True:
         print("Fricking type something right you twat")
 
 def createPlayer():
+    playerDictionary = {"name":input("Please input your name:") , 
+    "level":1 , 
+    "health":10 , 
+    "pdef":random.randint(0, 3) ,
+    "mdef":random.randint(0, 3) , 
+    "atk":random.randint(0, 3) , 
+    "matk":random.randint(0, 3) , 
+    "gold":0 , 
+    "weapon":"bare hands" , 
+    "armor":"commoner clothes" , 
+    "stageNum":1}
+
     def playerQuestions():
         statDict = {"att":0}
         statDict["att"] = input("If you live in a rural area, enter 3, but if in a city area, enter 0")
@@ -38,17 +50,7 @@ def createPlayer():
                 print("That is not a valid answer")
         else:
             print("That is not a valid input.")
-    playerDictionary = {"name":input("Please input your name:") , 
-    "level":1 , 
-    "health":10 , 
-    "pdef":random.randint(0, 3) ,
-    "mdef":random.randint(0, 3) , 
-    "atk":random.randint(0, 3) , 
-    "matk":random.randint(0, 3) , 
-    "gold":0 , 
-    "weapon":"bare hands" , 
-    "armor":"commoner clothes" , 
-    "stageNum":1}
+    playerQuestions()
     return(playerDictionary)
 player = createPlayer()
 def stats():
