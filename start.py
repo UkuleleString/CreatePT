@@ -153,6 +153,6 @@ def enemy_generator(playerLevel):
         pass
         
 
-enemy_generator(playerDictionary["level"])   
+enemy_generator(player["level"])   
 
 
