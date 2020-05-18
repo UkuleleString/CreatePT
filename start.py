@@ -29,14 +29,14 @@ def createPlayer():
     return(playerDictionary)
 variable = createPlayer()
 def stats():
-print(variable["name"])
-print("Your level is: " , variable["level"])
-print("Your health is: " , variable["health"])
-print("Your physical defense is: " , variable["pdef"])
-print("Your magical defense: " , variable["mdef"])
-print("Your attack power is: " , variable["atk"])
-print("Your magical attack power is: " , variable["matk"])
-print("Beginning at stage: " , variable["stageNum"])
+    print(variable["name"])
+    print("Your level is: " , variable["level"])
+    print("Your health is: " , variable["health"])
+    print("Your physical defense is: " , variable["pdef"])
+    print("Your magical defense: " , variable["mdef"])
+    print("Your attack power is: " , variable["atk"])
+    print("Your magical attack power is: " , variable["matk"])
+    print("Beginning at stage: " , variable["stageNum"])
 stats()
 
 
