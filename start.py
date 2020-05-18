@@ -23,6 +23,21 @@ while True:
         print("Fricking type something right you twat")
 
 def createPlayer():
+    def playerQuestions():
+        statDict = {"att":0}
+        statDict["att"] = input("If you live in a rural area, enter 3, but if in a city area, enter 0")
+        playerPref = input("Were you more into academics or sports?")
+        if(statDict["att"] == 3):
+            print("You live in a rural area. Your attack increases by 1." + (playerDictionary["atk"] + 1))
+        elif(statDict["att"] == 0):
+            if(playerPref == "academics"):
+                print("You were more interested in academics. Your magic attack raised by 1." + (playerDictionary["matk"] + 1))
+            elif(playerPref == "sports"):
+                print("You were more interested in sports. Your health increased by 2." + (playerDictionary["health"] + 2))
+            else:
+                print("That is not a valid answer")
+        else:
+            print("That is not a valid input.")
     playerDictionary = {"name":input("Please input your name:") , 
     "level":1 , 
     "health":10 , 
@@ -34,22 +49,6 @@ def createPlayer():
     "weapon":"bare hands" , 
     "armor":"commoner clothes" , 
     "stageNum":1}
-    def playerQuestions():
-        statDict = {"att":0}
-        statDict["att"] = input("If you live in a rural area, enter 3, but if in a city area, enter 0")
-        playerPref = input("Were you more into academics or sports?")
-        if(statDict["att"] == 3):
-            print("You live in a rural area. Your attack increases by 1." + (playerDictionary["atk"] + 1))
-        elif(statDict["att"] == 0):
-            playerPref()
-            if(playerPref == "academics"):
-                print("You were more interested in academics. Your magic attack raised by 1." + (playerDictionary["matk"] + 1))
-            elif(playerPref == "sports"):
-                print("You were more interested in sports. Your health increased by 2." + (playerDictionary["health"] + 2))
-            else:
-                print("That is not a valid answer")
-        else:
-            print("That is not a valid input.")
     return(playerDictionary)
 player = createPlayer()
 def stats():
@@ -62,7 +61,7 @@ def stats():
     print("Your magical attack power is: " , player["matk"])
     print("Beginning at stage: " , player["stageNum"])
 stats()
-player()
+
 
 def enemy_generator(playerLevel):
     nameList = ["Bob", "James", "Carl", "Xenowrath", "Rachaug", "Suroa", "Tunara"]
