@@ -19,12 +19,13 @@ while True:
         print("loaded save")
         break
     
-    else: 
+    else:
         print("Fucking type something right you twat")
 
 def createPlayer():
-    playerDictionary = {"name":input("Please input your name:") , "level":1 , "health":10 , "pdef":random.randint(0, 3) , "mdef":random.randint(0, 3) , "atk":random.randint(0, 3) , "matk":random.randint(0, 3) , "gold":0 , "weapon":"bare hands" , "armor":"commoner clothes"}
+    playerDictionary = {"name":input("Please input your name:") , "level":1 , "health":10 , "pdef":random.randint(0, 3) , "mdef":random.randint(0, 3) , "atk":random.randint(0, 3) , "matk":random.randint(0, 3) , "gold":0 , "weapon":"bare hands" , "armor":"commoner clothes" , "stageNum":1}
     return(playerDictionary)
+    
 variable = createPlayer()
 print(variable["name"])
 print("Your level is: " , variable["level"])
@@ -35,8 +36,8 @@ print("Your attack power is: " , variable["atk"])
 print("Your magical attack power is: " , variable["matk"])
 
 def enemy_generator(playerLevel):
-    nameList = ["Bob", "James", "Carl", "Xenowrath", "Grifllas", "Cyngia", "Golsenx", "Obis", "Suroa", "Sceilops", "Rachaug"]
-    enemyName = nameList[random.randint(0,10)]
+    nameList = ["Bob", "James", "Carl", "Xenowrath"]
+    enemyName = nameList[random.randint(0,4)]
     print(playerLevel)
     if (playerLevel >= 1 and playerLevel <= 5):
         lowEnemyStuff = {"Attack": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), "Defense": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), "magAttack": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), "magDefense": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), "HP": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), "EnemyName": enemyName}
@@ -66,6 +67,6 @@ def enemy_generator(playerLevel):
         print("That is not a valid player level")
         pass 
         
-enemy_generator(random.randint(1,15))   
+enemy_generator(random.randint(1,16))   
 
 
