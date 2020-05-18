@@ -83,7 +83,7 @@ def enemy_generator(playerLevel):
             lowEnemyStats["magDefense"] = 0
         if(lowEnemyStats["HP"] <= 0):
             lowEnemyStats["HP"] = 1
-        print("The enemy you are up against is named" + lowEnemyStats["EnemyName"])
+        print("The enemy you are up against is named " + lowEnemyStats["EnemyName"])
         print(lowEnemyStats["EnemyName"] + " has an attack level of " , lowEnemyStats["Attack"])
         print(lowEnemyStats["EnemyName"] + " has a defense level of " , lowEnemyStats["Defense"])
         print(lowEnemyStats["EnemyName"] + " has a magic attack level of " , lowEnemyStats["magAttack"])
