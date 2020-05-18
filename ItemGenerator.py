@@ -3,7 +3,8 @@ def itemCreation(playerLevel:5):
 
     def itemNameGenerator(category):
         if category == 'Sword':
-            swordGodNames = []
+            swordGodNames = ['The Colonel', 'The Lionsmith','The Elegiast','The Sun-in-Rags','The Horned-Axe',
+            'The Wolf Divided','The Madrugad']
             godName = random.choice(swordGodNames)
             godName2 = random.choice(swordGodNames)
             nameFormats = [
@@ -17,7 +18,8 @@ def itemCreation(playerLevel:5):
             name = random.choice(nameFormats)
 
         if category == 'Bow':
-            bowGodNames = []
+            bowGodNames = ['The Colonel', 'The Lionsmith','The Moth','The Velvet','The Malachite',
+            'The Witch-and-Sister','The Vagabond','The Sister-and-Witch']
             godName = random.choice(bowGodNames)
             nameFormats = [
                 "The Bow of " + godName,
@@ -29,7 +31,8 @@ def itemCreation(playerLevel:5):
             name = random.choice(nameFormats)
 
         if category == 'Staff':
-            staffGodNames = []
+            staffGodNames = ['The Malachite','The Witch-and-Sister','The Beachcomber','The Mother of Ants',
+            'The Meniscate','The Horned-Axe']
             godName = random.choice(staffGodNames)
             nameFormats = [
                 "The Staff of " + godName,
@@ -41,7 +44,8 @@ def itemCreation(playerLevel:5):
             name = random.choice(nameFormats)
         
         if category == 'Tome':
-            tomeGodNames = []
+            tomeGodNames = ['The Door in the Eye','The Meniscate','The Madrugad','The Flowermaker',
+            'The Forge of Days','The Vagabond']
             godName = random.choice(tomeGodNames)
             nameFormats = [
                 "The Tome of " + godName,
@@ -53,7 +57,8 @@ def itemCreation(playerLevel:5):
             name = random.choice(nameFormats)
 
         if category == 'Armor':
-            armorGodNames = []
+            armorGodNames = ['The Velvet','The Malachite','The Thunderskin','The Witch-and-Sister',
+            'The Lionsmith','The Meniscate','The Madrugad','The Forge of Days','The Sister-and-Witch']
             godName = random.choice(armorGodNames)
             nameFormats = [
                 "The Armor of " + godName,
@@ -66,7 +71,7 @@ def itemCreation(playerLevel:5):
         return name
             
 
-    createdItem = {"name":None, "type":None, "itemHP":None, "itemATT":None, "itemDEF":None, "itemmATT":None, "itemmDEF":None}
+    createdItem = {"name":None, "type":None, "itemHP":0, "itemATT":0, "itemDEF":0, "itemMagATT":0, "itemMagDEF":0}
 
     typeList = ['Sword','Bow','Staff','Tome','Armor']
     category = random.choice(typeList)
@@ -75,10 +80,9 @@ def itemCreation(playerLevel:5):
     createdItem["itemHP"] = random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel)
     createdItem["itemATT"] = random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel)
     createdItem["itemDEF"] = random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel)
-    createdItem["itemmATT"] = random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel)
-    createdItem["itemmDEF"] = random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel)
+    createdItem["itemMagATT"] = random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel)
+    createdItem["itemMagDEF"] = random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel)
         
     return createdItem
-
 
 print(itemCreation(5))
