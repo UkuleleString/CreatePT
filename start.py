@@ -23,9 +23,12 @@ while True:
         print("Fricking type something right you twat")
 
 def createPlayer():
-    playerDictionary = {"name":input("Please input your name:") , "level":1 , "health":10 , "pdef":random.randint(0, 3) , "mdef":random.randint(0, 3) , "atk":random.randint(0, 3) , "matk":random.randint(0, 3) , "gold":0 , "weapon":"bare hands" , "armor":"commoner clothes" , "stageNum":1}
+    playerDictionary = {"name":input("Please input your name:") , "level":1 , "health":10 , 
+    "pdef":random.randint(0, 3) , "mdef":random.randint(0, 3) , "atk":random.randint(0, 3) , 
+    "matk":random.randint(0, 3) , "gold":0 , "weapon":"bare hands" , "armor":"commoner clothes" , "stageNum":1}
     return(playerDictionary)
 variable = createPlayer()
+def stats():
 print(variable["name"])
 print("Your level is: " , variable["level"])
 print("Your health is: " , variable["health"])
@@ -34,6 +37,8 @@ print("Your magical defense: " , variable["mdef"])
 print("Your attack power is: " , variable["atk"])
 print("Your magical attack power is: " , variable["matk"])
 print("Beginning at stage: " , variable["stageNum"])
+stats()
+
 
 def enemy_generator(playerLevel):
     nameList = ["Bob", "James", "Carl", "Xenowrath"]
@@ -75,6 +80,7 @@ def enemy_generator(playerLevel):
         print(midEnemyStats["EnemyName"] + " has a magic defense level of " , midEnemyStats["magDefense"])
         print(midEnemyStats["EnemyName"] + " has " , midEnemyStats["HP"] , " health")
     elif (playerLevel >= 11 and playerLevel <= 15):
+<<<<<<< HEAD
         highEnemyStats = {"Attack": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "Defense": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "magAttack": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "magDefense": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "HP": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "EnemyName": enemyName}
         if(highEnemyStats["Attack"] <= 0):
             highEnemyStats["Attack"] = 0
@@ -92,6 +98,15 @@ def enemy_generator(playerLevel):
         print(highEnemyStats["EnemyName"] + " has a magic attack level of " , highEnemyStats["magAttack"])
         print(highEnemyStats["EnemyName"] + " has a magic defense level of " , highEnemyStats["magDefense"])
         print(highEnemyStats["EnemyName"] + " has " , highEnemyStats["HP"] , " health")
+=======
+        highEnemyStuff = {"Attack": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "Defense": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "magAttack": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "magDefense": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "HP": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), "EnemyName": enemyName}
+        print("The enemy you are up against is named " + highEnemyStuff["EnemyName"])
+        print(highEnemyStuff["EnemyName"] + " has an attack level of " , highEnemyStuff["Attack"])
+        print(highEnemyStuff["EnemyName"] + " has a defense level of " , highEnemyStuff["Defense"])
+        print(highEnemyStuff["EnemyName"] + " has a magic attack level of " , highEnemyStuff["magAttack"])
+        print(highEnemyStuff["EnemyName"] + " has a magic defense level of " , highEnemyStuff["magDefense"])
+        print(highEnemyStuff["EnemyName"] + " has " , highEnemyStuff["HP"] , " health")
+>>>>>>> 80dcd20c232f8d1ef6b3f2c4898ce7fdf18043b2
     else:
         print("That is not a valid player level")
         pass 
