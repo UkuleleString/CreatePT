@@ -62,7 +62,7 @@ def stats():
     print("Your magical attack power is: " , player["matk"])
     print("Beginning at stage: " , player["stageNum"])
 stats()
-
+player()
 
 def enemy_generator(playerLevel):
     nameList = ["Bob", "James", "Carl", "Xenowrath", "Rachaug", "Suroa", "Tunara"]
