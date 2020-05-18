@@ -39,8 +39,8 @@ stats()
 
 
 def enemy_generator(playerLevel):
-    nameList = ["Bob", "James", "Carl", "Xenowrath"]
-    enemyName = nameList[random.randint(0,3)]
+    nameList = ["Bob", "James", "Carl", "Xenowrath", "Rachaug", "Suroa", "Tunara"]
+    enemyName = nameList[random.randint(0,6)]
     if (playerLevel >= 1 and playerLevel <= 5):
         lowEnemyStats = {"Attack": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), "Defense": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), "magAttack": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), "magDefense": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), "HP": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), "EnemyName": enemyName}
         if(lowEnemyStats["Attack"] <= 0):
