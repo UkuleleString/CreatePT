@@ -254,13 +254,10 @@ while True:
     if (playerInput == "start"):
         print("started game")
         break
-
-    elif (playerInput == "load"):
-        print("loaded save")
-        break
     
     else: 
         print("Fricking type something right you twat")
+
 #Storyline/intro
 print("It was a peaceful day for you and your family. Maybe you were hiking or fishing, it's been so long you've started to forget.")
 print("But you'll never forget their lifeless eyes staring at you. Their blood spattered across the remains of your once beautiful home.")
