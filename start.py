@@ -48,7 +48,7 @@ def createPlayer():
                 print("Not a valid input.")
                 
             
-    playerQuestions()
+    #playerQuestions()
     return(playerDictionary)
 player = createPlayer()
 def stats():
@@ -264,7 +264,7 @@ while True:
 #Storyline/intro
 print("It was a peaceful day for you and your family. Maybe you were hiking or fishing, it's been so long you've started to forget.")
 print("But you'll never forget their lifeless eyes staring at you. Their blood spattered across the remains of your once beautiful home.")
-print("Then and there you swore revenge on the monster who killed them, Gerasis: Destroyer of Towns.")
+print("In that moment you swore revenge on the monster who killed them, Gerasis: Destroyer of Towns.")
 print("Your quest for blood has brought you to the lair of Gerasis.")
 print("You must fight and rise through the 14 levels of the lair before you can defeat him once and for all.")
 print("Good luck, brave warrior!")
