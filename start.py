@@ -149,14 +149,11 @@ def enemy_generator(playerLevel):
         return(highEnemyStats)
     
     if(playerLevel >= 1 and playerLevel <= 5):
-        low_level()
-        return(lowEnemyStats)
+        return(low_level())
     elif(playerLevel >= 6 and playerLevel <= 10):
-        mid_level()
-        return(midEnemyStats)
+        return(mid_level())
     elif(playerLevel >= 11 and playerLevel <= 15):
-        high_level()
-        return(highEnemyStats)
+        return(high_level())
     else:
         print("That is not a valid level")
         pass
