@@ -239,6 +239,62 @@ def itemCreation(playerLevel:5):
     createdItem["itemMagDEF"] = random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel)
         
     return createdItem
+
+def roomGenerator(playerDictionary):
+    '''Generates levels for players'''
+
+    def damageCalculator(attackerDict=createPlayer(), weapon=itemCreation('sword',1), defenderDict=enemy_generator(1), armor=itemCreation('armor',1), magic=False):
+        if magic == False:
+            print(attackerDict["name"] + "'s attack is ",attackerDict["atk"] + weapon['itemATT'])
+            print(defenderDict["name"] + "'s defense is ", defenderDict["pdef"] + armor['itemDEF'])
+            print(attackerDict['name'] + " attacks with their " + weapon['name'])
+            return attackerDict["atk"] + weapon['itemATT'] - defenderDict["pdef"] + armor['itemDEF']
+        else:
+            print(attackerDict["name"] + "'s attack is ",attackerDict["matk"] + weapon['itemMagATT'])
+            print(defenderDict["name"] + "'s defense is ", defenderDict["mdef"]  + armor['itemMagDEF'])
+            print(attackerDict['name'] + " attacks with their " + weapon['name'])
+            return attackerDict["matk"] + weapon['itemMagATT'] - defenderDict["mdef"] + armor['itemMagDEF']
+
+    #Introduces new room
+    print("The room is dark, dank, and has an enemy/enemies!")
+    print()
+    enemyDicts = {}
+    for i in range(1,random.randint(2,4)):
+        enemyDicts[i] = enemy_generator(playerDictionary['level'])
+        print()
+    input()
+    clear()
+
+    #Battle Sequence
+    while True:
+        playerAction = input("Are you going to 'ATTACK', 'MAGIC ATTACK', 'DEFEND', or look at someone's 'STATS'? ")
+        if playerAction.lower() == 'attack':
+            clear()
+            print("Choose an enemy to attack!")
+            for i in range(1, len(enemyDicts) + 1):
+                print("To attack " + enemyDicts[i]["EnemyName"] + ", enter ", i)
+            while True:
+                playerTarget = input()
+                if playerTarget in [1, 2, 3]:
+                    break
+                else: 
+                    print("Choose a valid target!")
+            clear()
+            damage = damageCalculator(playerDictionary, playerDictionary['weapon'],enemyDicts[playerTarget], False)
+        if playerAction.lower() == 'magic attack':
+            clear()
+            print("Choose an enemy to attack!")
+            for i in range(1, len(enemyDicts) + 1):
+                print("To attack " + enemyDicts[i]["EnemyName"] + ", enter ", i)
+            while True:
+                playerTarget = input()
+                if playerTarget in [1, 2, 3]:
+                    if enemyDicts
+                    break
+                else: 
+                    print("Choose a valid target!")
+            clear()
+            damage = damageCalculator(playerDictionary, playerDictionary['weapon'],enemyDicts[playerTarget], True)
         
 #Actual game and stuff starts here
 while True:
