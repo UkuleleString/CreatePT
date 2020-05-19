@@ -21,7 +21,7 @@ while True:
     
     else: 
         print("Fricking type something right you twat")
-
+#Create player stuff
 def createPlayer():
     playerDictionary = {"name":input("Please input your name:") , 
     "level":1 , 
@@ -75,7 +75,7 @@ def stats():
     print("Beginning at stage: " , player["stageNum"])
 stats()
 
-
+#Enemy Generator function
 def enemy_generator(playerLevel):
     nameList = ["Bob", "James", "Carl", "Xenowrath", "Rachaug", "Suroa", "Tunara"]
     enemyName = nameList[random.randint(0,6)]
@@ -164,7 +164,7 @@ def enemy_generator(playerLevel):
         print("That is not a valid level")
         pass
 
-
+# Item Creation function
 def itemCreation(playerLevel:5):
     '''Creates a random item based on player level'''
 
