@@ -101,3 +101,12 @@ def enemy_generator(playerLevel):
         print("That is not a valid level")
         pass
 
+def roomGenerator(playerDictionary):
+    
+
+    print("The room is dark, dank, and has an enemy/enemies!")
+    enemyDicts = {}
+    for i in random.randint(1,3):
+        
+    
+roomGenerator(createPlayer())
