@@ -268,4 +268,5 @@ print("In that moment you swore revenge on the monster who killed them, Gerasis:
 print("Your quest for blood has brought you to the lair of Gerasis.")
 print("You must fight and rise through the 14 levels of the lair before you can defeat him once and for all.")
 print("Good luck, brave warrior!")
+print(" ")
 stats()
