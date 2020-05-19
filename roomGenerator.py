@@ -1,3 +1,5 @@
+import random
+
 def createPlayer():
     playerDictionary = {"name":input("Please input your name:") , 
     "level":1 , 
