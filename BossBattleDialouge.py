@@ -6,4 +6,9 @@ and get revenge and now the time is finally here."""
 
 #Player enters the fifth and final room; Gerasis stands before him/her. 
 
-print("")
+print("GERASIS: ")
+print("Hahahahaha you reckless mortal. You DARE enter the layer of Gerasis: Destroyer of Towns")
+print("YOU: ")
+print(".......")
+print("GERASIS: ")
+print("What? 'Destroyer of Lives' and 'Destroyer of Worlds' was already taken.")
