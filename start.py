@@ -259,6 +259,5 @@ while True:
         print("loaded save")
         break
     
-
     else: 
         print("Fricking type something right you twat")
