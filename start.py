@@ -152,7 +152,7 @@ def enemy_generator(playerLevel):
         pass
 
 # Item Creation function
-def itemCreation(playerLevel:5):
+def itemCreation(itemType, playerLevel:5):
     '''Creates a random item based on player level'''
 
     def itemNameGenerator(category):
@@ -227,9 +227,11 @@ def itemCreation(playerLevel:5):
             
 
     createdItem = {"name":None, "type":None, "itemHP":0, "itemATT":0, "itemDEF":0, "itemMagATT":0, "itemMagDEF":0}
-
-    typeList = ['Sword','Bow','Staff','Tome','Armor']
-    category = random.choice(typeList)
+    if itemType in ['Sword','Bow','Staff','Tome','Armor']:
+        category = itemType
+    else:
+        typeList = ['Sword','Bow','Staff','Tome','Armor']
+        category = random.choice(typeList)
     createdItem["type"] = category
     createdItem["name"] = itemNameGenerator(category)
     createdItem["itemHP"] = random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel)
