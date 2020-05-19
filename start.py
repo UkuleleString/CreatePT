@@ -1,4 +1,3 @@
-import pickle
 import random
 from os import system, name 
 from time import sleep 
