@@ -41,19 +41,25 @@ def createPlayer():
         while True:
             if(statDict["att"] == 3):
                 print("Rural area. Your physical attack increased by 1." + (playerDictionary["atk"] + 1))
+                break
             elif(statDict["att"] == 0):
                 print("You live in a city area. Physical defense increases by 1." + (playerDictionary["pdef"] + 1))
-            else:
                 break
+            else:
+                print("Not a valid input.")
+                
         
         playerPref = input("Were you more into academics or sports?")
         while True:
             if(playerPref == "academics"):
                 print("You were more interested in academics. Your magic attack raised by 1." + (playerDictionary["matk"] + 1))
+                break
             elif(playerPref == "sports"):
                 print("You were more interested in sports. Your health increased by 2." + (playerDictionary["health"] + 2))
-            else:
                 break
+            else:
+                print("Not a valid input.")
+                
             
     playerQuestions()
     return(playerDictionary)
