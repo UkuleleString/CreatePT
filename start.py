@@ -352,7 +352,7 @@ def gearGiver():
     player['armor'] = itemCreation(random.choice('armor'), player['level'])
     print("You found: " + player['weapon']['name'])
     print(player['weapon']['name'] + ", Attack: " , player['weapon']['atk'], ", Magic Attack: ", player['weapon']['matk'])
-    print("You found: " + player['armor']['name'] + 
+    print("You found: " + player['armor']['name'])
     print(player['weapon']['name'] + ", Defense: " , player['armor']['pdef'], ", Magic Defense: ", player['armor']['mdef'])
         
 #Actual game and stuff starts here
