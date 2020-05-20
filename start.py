@@ -7,7 +7,7 @@ def clear():
         _ = system('cls') 
     else: 
         _ = system('clear') 
-
+#Create player functions
 def createPlayer():
     playerDictionary = {"name":input("Please input your name:") , 
     "level":1 , 
