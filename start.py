@@ -278,13 +278,13 @@ def roomGenerator(playerDictionary, stageNumber):
 
     def damageCalculator(attackerDict=player, weapon=itemCreation('sword',1), defenderDict=enemy_generator(1), armor=itemCreation('armor',1), magic=False):
         if magic == False:
-            print(attackerDict["name"] + "'s attack is ",attackerDict["atk"] + weapon['atk'])
-            print(defenderDict["name"] + "'s defense is ", defenderDict["pdef"] + armor['pdef'])
+            print(attackerDict["name"] + "'s attack is ", (attackerDict["atk"] + weapon['atk']))
+            print(defenderDict["name"] + "'s defense is ", (defenderDict["pdef"] + armor['pdef']))
             print(attackerDict['name'] + " attacks with their " + weapon['name'])
             return attackerDict["atk"] + weapon['atk'] - defenderDict["pdef"] + armor['pdef']
         else:
-            print(attackerDict["name"] + "'s attack is ",attackerDict["matk"] + weapon['matk'])
-            print(defenderDict["name"] + "'s defense is ", defenderDict["mdef"]  + armor['mdef'])
+            print(attackerDict["name"] + "'s attack is ", (attackerDict["matk"] + weapon['matk']))
+            print(defenderDict["name"] + "'s defense is ", (defenderDict["mdef"]  + armor['mdef']))
             print(attackerDict['name'] + " attacks with their " + weapon['name'])
             return attackerDict["matk"] + weapon['matk'] - defenderDict["mdef"] + armor['mdef']
 
