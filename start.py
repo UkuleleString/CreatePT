@@ -348,8 +348,8 @@ def roomGenerator(playerDictionary, stageNumber):
             damageCalculator(attackerDict=enemyDicts[i],defenderDict=playerDictionary)
 
 def gearGiver():
-    player['weapon'] = itemCreation(random.choice(['sword', 'bow', 'staff', 'tome']), player['level'])
-    player['armor'] = itemCreation(random.choice('armor'), player['level'])
+    player['weapon'] = itemCreation(random.choice(['Sword', 'Bow', 'Staff', 'Tome']), player['level'])
+    player['armor'] = itemCreation(random.choice('Armor'), player['level'])
     print("You found: " + player['weapon']['name'])
     print(player['weapon']['name'] + ", Attack: " , player['weapon']['atk'], ", Magic Attack: ", player['weapon']['matk'])
     print("You found: " + player['armor']['name'])
