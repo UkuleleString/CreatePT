@@ -16,10 +16,11 @@ def createPlayer():
     "mdef":random.randint(0, 3) , 
     "atk":random.randint(0, 3) , 
     "matk":random.randint(0, 3) , 
-    "gold":0 ,  
+    "gold":0 , 
+    "weapon":{} , 
+    "armor":{} , 
     "stageNum":1}
-    playerWeapon = {"weapon":{}}
-    playerArmor = {"armor":{}}
+    
 
     def playerQuestions():
         while True:
