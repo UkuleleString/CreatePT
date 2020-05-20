@@ -284,9 +284,9 @@ def roomGenerator(playerDictionary, stageNumber):
             return attackerDict["atk"] + weapon['atk'] - defenderDict["pdef"] + armor['pdef']
         else:
             print(attackerDict["name"] + "'s attack is ",attackerDict["matk"] + weapon['matk'])
-            print(defenderDict["name"] + "'s defense is ", defenderDict["mdef"]  + armor['mdefatk'])
+            print(defenderDict["name"] + "'s defense is ", defenderDict["mdef"]  + armor['mdef'])
             print(attackerDict['name'] + " attacks with their " + weapon['name'])
-            return attackerDict["matk"] + weapon['matk'] - defenderDict["mdef"] + armor['mdefatk']
+            return attackerDict["matk"] + weapon['matk'] - defenderDict["mdef"] + armor['mdef']
 
     def playerAttack(magic):
         clear()
