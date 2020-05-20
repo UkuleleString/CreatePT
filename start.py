@@ -324,3 +324,5 @@ print("You must fight and rise through the 14 levels of the lair before you can 
 print("Good luck, brave warrior!")
 print(" ")
 stats()
+for i in range(15):
+    roomGenerator(player, i)
