@@ -57,15 +57,15 @@ def createPlayer():
 def stats(entity, player=False):
     print("Name: " + entity["name"])
     if player == True:
-        print("Your level is: " , entity["level"])
-        print("Beginning at stage: " , entity["stageNum"])
-        print("Your weapon is: " + entity['weapon']['name'])
-        print("Your armor is: " + entity['armor']['name'])
-    print("Your health is: " , entity["health"])
-    print("Your physical defense is: " , entity["pdef"])
-    print("Your magical defense: " , entity["mdef"])
-    print("Your attack power is: " , entity["atk"])
-    print("Your magical attack power is: " , entity["matk"])
+        print("level: " , entity["level"])
+        print("Stage: " , entity["stageNum"])
+        print("Weapon: " + entity['weapon']['name'])
+        print("Armor: " + entity['armor']['name'])
+    print("Health: " , entity["health"])
+    print("Attack: ", entity['atk'])
+    print("Magical Attack: ", entity['matk'])
+    print("Physical defense: " , entity["pdef"])
+    print("Magical defense: " , entity["mdef"])
     input("Press enter to continue...")
     clear()
 
@@ -246,19 +246,19 @@ def itemCreation(itemType, playerLevel:5):
 
     createdItem["atk"] = random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel)
     if category in ['Sword', 'Bow']:
-        createdItem['atk'] += 5
+        createdItem['atk'] += random.randint(2,4)*playerLevel
 
     createdItem["pdef"] = random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel)
     if category == 'Armor':
-        createdItem['pdef'] += 5
+        createdItem['pdef'] += random.randint(2,4)*playerLevel
 
     createdItem["matk"] = random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel)
     if category in ['Staff', 'Tome']:
-        createdItem['matk'] += 5
+        createdItem['matk'] += random.randint(2,4)*playerLevel
 
     createdItem["mdef"] = random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel)
     if category == 'Armor':
-        createdItem['mdef'] += 5
+        createdItem['mdef'] += random.randint(2,4)*playerLevel
 
     return createdItem
 
@@ -281,12 +281,12 @@ def roomGenerator(playerDictionary, stageNumber):
             print(attackerDict["name"] + "'s attack is ", (attackerDict["atk"] + weapon['atk']))
             print(defenderDict["name"] + "'s defense is ", (defenderDict["pdef"] + armor['pdef']))
             print(attackerDict['name'] + " attacks with their " + weapon['name'])
-            return attackerDict["atk"] + weapon['atk'] - defenderDict["pdef"] + armor['pdef']
+            return attackerDict["atk"] + weapon['atk'] - defenderDict["pdef"] - armor['pdef']
         else:
             print(attackerDict["name"] + "'s attack is ", (attackerDict["matk"] + weapon['matk']))
             print(defenderDict["name"] + "'s defense is ", (defenderDict["mdef"]  + armor['mdef']))
             print(attackerDict['name'] + " attacks with their " + weapon['name'])
-            return attackerDict["matk"] + weapon['matk'] - defenderDict["mdef"] + armor['mdef']
+            return attackerDict["matk"] + weapon['matk'] - defenderDict["mdef"] - armor['mdef']
 
     def playerAttack(magic, enemyDicts, playerDictionary):
         clear()
@@ -300,7 +300,9 @@ def roomGenerator(playerDictionary, stageNumber):
             else: 
                 print("Choose a valid target!")
         clear()
-        enemyDicts[playerTarget]['health'] -= damageCalculator(playerDictionary, playerDictionary['weapon'],enemyDicts[playerTarget], magic=magic)
+        damage = damageCalculator(playerDictionary, playerDictionary['weapon'],enemyDicts[playerTarget], magic=magic)
+        if damage > 0:   
+            enemyDicts[playerTarget]['health'] -= damage
         print(enemyDicts[playerTarget]['name'] + " is at ", enemyDicts[playerTarget]['health'], " health!")
         input("Press enter to continue...")
         return (enemyDicts, playerTarget)
@@ -314,13 +316,23 @@ def roomGenerator(playerDictionary, stageNumber):
             playerAction = playerAttack(False, enemyDicts, playerDictionary)
             enemyDicts = playerAction[0]
             if enemyDicts[playerAction[1]]['health'] <= 0:
-                enemies -1
+                enemies -= 1
+            if enemies == 0:
+                print("After this long battle, you have defeated your opponents.")
+                input("Press enter to continue...")
+                clear()
+                break
         
         elif playerAction.lower() == 'magic attack':
             playerAction = playerAttack(True, enemyDicts, playerDictionary)
             enemyDicts = playerAction[0]
             if enemyDicts[playerAction[1]]['health'] <= 0:
-                enemies -1
+                enemies -= 1
+            if enemies == 0:
+                print("After this long battle, you have defeated your opponents.")
+                input("Press enter to continue...")
+                clear()
+                break
 
         elif playerAction.lower() == 'defend':
             print("You prepare yourself for the enemy's onslaught. Your defense increases!")
@@ -334,25 +346,35 @@ def roomGenerator(playerDictionary, stageNumber):
                 print("To attack " + enemyDicts[i]["name"] + ", enter ", i)
             print("To check yourself, enter 4!")
             while True:
-                playerTarget = input()
+                playerTarget = int(input())
                 if playerTarget in [1, 2, 3]:
                     stats(enemyDicts[playerTarget])
                     break
                 elif playerTarget == 4:
                     stats(playerDictionary, True)
+                    break
                 else: 
                     print("Choose a valid target!")
             continue
 
-        if enemies == 0:
-            print("After this long battle, you have defeated your opponents.")
-            input("Press enter to continue...")
-            clear()
-            break
+        else:
+            print("What?")
+            continue
 
+        clear()
         print("The enemies are attacking!!!")
         for i in range(1, 1 + len(enemyDicts)):
-            damageCalculator(attackerDict=enemyDicts[i],defenderDict=playerDictionary)
+            if enemyDicts[i]['health'] > 0:
+                damage = damageCalculator(attackerDict=enemyDicts[i],defenderDict=playerDictionary)
+                if damage > 0:
+                    playerDictionary['health'] -= damage
+        print("You are at ", playerDictionary['health'], " health!")
+        input("Press enter to continue...")
+        if playerDictionary['health'] <= 0:
+            clear()
+            print("As you take your final breath, you curse Gerasis, but he feels nothing at all...")
+            input("Press enter to end.")
+            exit()
 
 def gearGiver():
     player['weapon'] = itemCreation(random.choice(['Sword', 'Bow', 'Staff', 'Tome']), player['level'])
@@ -398,6 +420,15 @@ stats(player, True)
 for i in range(1, 16):
     roomGenerator(player, i)
     print("On your way towards your foe, you've found some equipment")
+    player['stageNum'] += 1
+    player['level'] += 1
     gearGiver()
     input("Press enter to continue...")
-    player['stageNum'] += 1
+    clear()
+    player['health'] += random.randint(5,7)
+    player['atk'] += random.randint(1,3)
+    player['matk'] += random.randint(1,3)
+    player['pdef'] += random.randint(1,3)
+    player['mdef'] += random.randint(1,3)
+    print("You leveled up!!!!!!")
+    stats(player,True)
