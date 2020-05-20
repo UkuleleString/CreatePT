@@ -324,7 +324,7 @@ def roomGenerator(playerDictionary, stageNumber):
         elif playerAction.lower() == 'stats':
             print("Whose stats do you want to check?")
             for i in range(1, len(enemyDicts) + 1):
-                print("To attack " + enemyDicts[i]["EnemyName"] + ", enter ", i)
+                print("To attack " + enemyDicts[i]["name"] + ", enter ", i)
             print("To check yourself, enter 4!")
             while True:
                 playerTarget = input()
