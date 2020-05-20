@@ -292,7 +292,7 @@ def roomGenerator(playerDictionary, stageNumber):
         clear()
         print("Choose an enemy to attack!")
         for i in range(1, len(enemyDicts) + 1):
-            print("To attack " + enemyDicts[i]["EnemyName"] + ", HP: ", enemyDicts[i]["health"] ,", enter ", i)
+            print("To attack " + enemyDicts[i]['name'] + ", HP: ", enemyDicts[i]["health"] ,", enter ", i)
         while True:
             playerTarget = input()
             if playerTarget in [1, 2, 3] and enemyDicts[playerTarget]['health'] == 0:
