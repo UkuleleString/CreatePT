@@ -16,20 +16,19 @@ def createPlayer():
     "mdef":random.randint(0, 3) , 
     "atk":random.randint(0, 3) , 
     "matk":random.randint(0, 3) , 
-    "gold":0 , 
-    "weapon":"bare hands" , 
-    "armor":"commoner clothes" , 
+    "gold":0 ,  
     "stageNum":1}
+    playerWeapon = {"weapon":{}}
+    playerArmor = {"armor":{}}
 
     def playerQuestions():
-        statDict = {"att":0}
-        statDict["att"] = input("If you live in a rural area, enter 3, but if in a city area, enter 0 ")
         while True:
-            if(statDict["att"] == 3):
-                print("Rural area. Your physical attack increased by 1." + (playerDictionary["atk"] + 1))
+            statDict = input("Do you live in a rural area or a city area? ")
+            if(statDict == "rural" or statDict == "Rural"):
+                print("Rural area. Your physical attack increased by 1." + (playerDictionary["atk"] , 1))
                 break
-            elif(statDict["att"] == 0):
-                print("You live in a city area. Physical defense increases by 1." + (playerDictionary["pdef"] + 1))
+            elif(statDict == "city" or statDict == "City"):
+                print("You live in a city area. Physical defense increases by 1." + (playerDictionary["pdef"] , 1))
                 break
             else:
                 print("Not a valid input.")
@@ -37,10 +36,10 @@ def createPlayer():
         
         playerPref = input("Were you more into academics or sports?")
         while True:
-            if(playerPref == "academics"):
+            if(playerPref == "academics" or playerPref == "Academics"):
                 print("You were more interested in academics. Your magic attack raised by 1." + (playerDictionary["matk"] + 1))
                 break
-            elif(playerPref == "sports"):
+            elif(playerPref == "sports" or playerPref == "Sports"):
                 print("You were more interested in sports. Your health increased by 2." + (playerDictionary["health"] + 2))
                 break
             else:
@@ -76,7 +75,7 @@ def enemy_generator(playerLevel):
         "matk": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), 
         "mdef": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), 
         "health": random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel), 
-        "EnemyName": enemyName}
+        "name": enemyName}
         if(lowEnemyStats["atk"] <= 0):
             lowEnemyStats["atk"] = 0
         if(lowEnemyStats["pdef"] <= 0):
@@ -87,12 +86,12 @@ def enemy_generator(playerLevel):
             lowEnemyStats["mdef"] = 0
         if(lowEnemyStats["health"] <= 0):
             lowEnemyStats["health"] = 1
-        print("The enemy you are up against is named " + lowEnemyStats["EnemyName"])
-        print(lowEnemyStats["EnemyName"] + " has an attack level of " , lowEnemyStats["atk"])
-        print(lowEnemyStats["EnemyName"] + " has a defense level of " , lowEnemyStats["pdef"])
-        print(lowEnemyStats["EnemyName"] + " has a magic attack level of " , lowEnemyStats["matk"])
-        print(lowEnemyStats["EnemyName"] + " has a magic defense level of " , lowEnemyStats["mdef"])
-        print(lowEnemyStats["EnemyName"] + " has " , lowEnemyStats["health"] , " health")
+        print("The enemy you are up against is named " + lowEnemyStats["name"])
+        print(lowEnemyStats["name"] + " has an attack level of " , lowEnemyStats["atk"])
+        print(lowEnemyStats["name"] + " has a defense level of " , lowEnemyStats["pdef"])
+        print(lowEnemyStats["name"] + " has a magic attack level of " , lowEnemyStats["matk"])
+        print(lowEnemyStats["name"] + " has a magic defense level of " , lowEnemyStats["mdef"])
+        print(lowEnemyStats["name"] + " has " , lowEnemyStats["health"] , " health")
         return(lowEnemyStats)
     
     def mid_level():
@@ -101,7 +100,7 @@ def enemy_generator(playerLevel):
         "matk": random.randint(1,4)*playerLevel + random.randint(-1*playerLevel,playerLevel), 
         "mdef": random.randint(1,4)*playerLevel + random.randint(-1*playerLevel,playerLevel), 
         "health": random.randint(1,4)*playerLevel + random.randint(-1*playerLevel,playerLevel), 
-        "EnemyName": enemyName}
+        "name": enemyName}
         if(midEnemyStats["atk"] <= 0):
             midEnemyStats["atk"] = 0
         if(midEnemyStats["pdef"] <= 0):
@@ -112,12 +111,12 @@ def enemy_generator(playerLevel):
             midEnemyStats["mdef"] = 0
         if(midEnemyStats["health"] <= 0):
             midEnemyStats["health"] = 1
-        print("The enemy you are up against is named " + midEnemyStats["EnemyName"])
-        print(midEnemyStats["EnemyName"] + " has an attack level of " , midEnemyStats["atk"])
-        print(midEnemyStats["EnemyName"] + " has a defense level of " , midEnemyStats["pdef"])
-        print(midEnemyStats["EnemyName"] + " has a magic attack level of " , midEnemyStats["matk"])
-        print(midEnemyStats["EnemyName"] + " has a magic defense level of " , midEnemyStats["mdef"])
-        print(midEnemyStats["EnemyName"] + " has " , midEnemyStats["health"] , " health")
+        print("The enemy you are up against is named " + midEnemyStats["name"])
+        print(midEnemyStats["name"] + " has an attack level of " , midEnemyStats["atk"])
+        print(midEnemyStats["name"] + " has a defense level of " , midEnemyStats["pdef"])
+        print(midEnemyStats["name"] + " has a magic attack level of " , midEnemyStats["matk"])
+        print(midEnemyStats["name"] + " has a magic defense level of " , midEnemyStats["mdef"])
+        print(midEnemyStats["name"] + " has " , midEnemyStats["health"] , " health")
         return(midEnemyStats)
     
     def high_level():
@@ -126,7 +125,7 @@ def enemy_generator(playerLevel):
         "matk": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), 
         "mdef": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), 
         "health": random.randint(2,5)*playerLevel + random.randint(-1*playerLevel,playerLevel), 
-        "EnemyName": enemyName}
+        "name": enemyName}
         if(highEnemyStats["atk"] <= 0):
             highEnemyStats["atk"] = 0
         if(highEnemyStats["pdef"] <= 0):
@@ -137,12 +136,12 @@ def enemy_generator(playerLevel):
             highEnemyStats["mdef"] = 0
         if(highEnemyStats["health"] <= 0):
             highEnemyStats["health"] = 1
-        print("The enemy you are up against is named " + highEnemyStats["EnemyName"])
-        print(highEnemyStats["EnemyName"] + " has an attack level of " , highEnemyStats["atk"])
-        print(highEnemyStats["EnemyName"] + " has a defense level of " , highEnemyStats["pdef"])
-        print(highEnemyStats["EnemyName"] + " has a magic attack level of " , highEnemyStats["matk"])
-        print(highEnemyStats["EnemyName"] + " has a magic defense level of " , highEnemyStats["mdef"])
-        print(highEnemyStats["EnemyName"] + " has " , highEnemyStats["health"] , " health")
+        print("The enemy you are up against is named " + highEnemyStats["name"])
+        print(highEnemyStats["name"] + " has an attack level of " , highEnemyStats["atk"])
+        print(highEnemyStats["name"] + " has a defense level of " , highEnemyStats["pdef"])
+        print(highEnemyStats["name"] + " has a magic attack level of " , highEnemyStats["matk"])
+        print(highEnemyStats["name"] + " has a magic defense level of " , highEnemyStats["mdef"])
+        print(highEnemyStats["name"] + " has " , highEnemyStats["health"] , " health")
         return(highEnemyStats)
     
     if(playerLevel >= 1 and playerLevel <= 5):
