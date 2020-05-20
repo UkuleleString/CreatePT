@@ -38,7 +38,7 @@ def createPlayer():
                 
         
         while True:
-            playerPref = input("Were you more into academics or sports?")
+            playerPref = input("Were you more into academics or sports? ")
             if(playerPref == "academics" or playerPref == "Academics"):
                 playerDictionary["matk"] += 1
                 print("You were more interested in academics. Your magic attack raised by 1.")
@@ -51,7 +51,7 @@ def createPlayer():
                 print("Not a valid input.")
                 
             
-    #playerQuestions()
+    playerQuestions()
     return(playerDictionary)
 
 def stats(entity, player=False):
