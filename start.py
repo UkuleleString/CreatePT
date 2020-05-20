@@ -295,7 +295,7 @@ def roomGenerator(playerDictionary, stageNumber):
             print("To attack " + enemyDicts[i]['name'] + ", HP: ", enemyDicts[i]["health"] ,", enter ", i)
         while True:
             playerTarget = int(input())
-            if playerTarget in [1, 2, 3] and enemyDicts[playerTarget]['health'] == 0:
+            if playerTarget in [1, 2, 3] and enemyDicts[playerTarget]['health'] > 0:
                 break
             else: 
                 print("Choose a valid target!")
@@ -349,7 +349,7 @@ def roomGenerator(playerDictionary, stageNumber):
 
 def gearGiver():
     player['weapon'] = itemCreation(random.choice(['Sword', 'Bow', 'Staff', 'Tome']), player['level'])
-    player['armor'] = itemCreation(random.choice('Armor'), player['level'])
+    player['armor'] = itemCreation('Armor', player['level'])
     print("You found: " + player['weapon']['name'])
     print(player['weapon']['name'] + ", Attack: " , player['weapon']['atk'], ", Magic Attack: ", player['weapon']['matk'])
     print("You found: " + player['armor']['name'])
