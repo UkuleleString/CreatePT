@@ -276,7 +276,7 @@ def roomGenerator(playerDictionary, stageNumber):
     input("Press enter to continue...")
     clear()
 
-    def damageCalculator(attackerDict={"name":'Mary' , "health":10 , "pdef":0,"mdef":0 , "atk":0 , "matk":0}, weapon=itemCreation('sword',1), defenderDict=enemy_generator(1), armor=itemCreation('armor',1), magic=False):
+    def damageCalculator(attackerDict={"name":'Mary' , "health":10 , "pdef":0,"mdef":0 , "atk":0 , "matk":0}, weapon=itemCreation('Sword',1), defenderDict=enemy_generator(1), armor=itemCreation('Armor',1), magic=False):
         if magic == False:
             print(attackerDict["name"] + "'s attack is ", (attackerDict["atk"] + weapon['atk']))
             print(defenderDict["name"] + "'s defense is ", (defenderDict["pdef"] + armor['pdef']))
@@ -310,10 +310,10 @@ def roomGenerator(playerDictionary, stageNumber):
         temporaryDefense = {"pdef": 0, "mdef":0}
         playerAction = input("Are you going to 'ATTACK', 'MAGIC ATTACK', 'DEFEND', or look at someone's 'STATS'? ")
         if playerAction.lower() == 'attack':
-            playerAttack(False)
+            playerAttack(magic=False)
         
         elif playerAction.lower() == 'magic attack':
-            playerAttack(True)
+            playerAttack(magic=True)
 
         elif playerAction.lower() == 'defend':
             print("You prepare yourself for the enemy's onslaught. Your defense increases!")
