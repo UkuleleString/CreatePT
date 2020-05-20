@@ -246,19 +246,19 @@ def itemCreation(itemType, playerLevel:5):
 
     createdItem["atk"] = random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel)
     if category in ['sword', 'bow']:
-        createdItem['atk'] += random.randint(1,3)*playerLevel
+        createdItem['atk'] += 5
 
     createdItem["pdef"] = random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel)
     if category == 'armor':
-        createdItem['pdef'] += random.randint(1,3)*playerLevel
+        createdItem['pdef'] += 5
 
     createdItem["matk"] = random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel)
     if category in ['staff', 'tome']:
-        createdItem['matk'] += random.randint(1,3)*playerLevel
+        createdItem['matk'] += 5
 
     createdItem["mdef"] = random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel)
     if category == 'armor':
-        createdItem['mdef'] += random.randint(1,3)*playerLevel
+        createdItem['mdef'] += 5
 
     return createdItem
 
