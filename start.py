@@ -245,19 +245,19 @@ def itemCreation(itemType, playerLevel:5):
     createdItem["itemHP"] = random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel)
 
     createdItem["atk"] = random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel)
-    if category in ['sword', 'bow']:
+    if category in ['Sword', 'Bow']:
         createdItem['atk'] += 5
 
     createdItem["pdef"] = random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel)
-    if category == 'armor':
+    if category == 'Armor':
         createdItem['pdef'] += 5
 
     createdItem["matk"] = random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel)
-    if category in ['staff', 'tome']:
+    if category in ['Staff', 'Tome']:
         createdItem['matk'] += 5
 
     createdItem["mdef"] = random.randint(0,3)*playerLevel + random.randint(-1*playerLevel,playerLevel)
-    if category == 'armor':
+    if category == 'Armor':
         createdItem['mdef'] += 5
 
     return createdItem
@@ -276,7 +276,7 @@ def roomGenerator(playerDictionary, stageNumber):
     input("Press enter to continue...")
     clear()
 
-    def damageCalculator(attackerDict=player, weapon=itemCreation('sword',1), defenderDict=enemy_generator(1), armor=itemCreation('armor',1), magic=False):
+    def damageCalculator(attackerDict={"name":'Mary' , "health":10 , "pdef":0,"mdef":0 , "atk":0 , "matk":0}, weapon=itemCreation('sword',1), defenderDict=enemy_generator(1), armor=itemCreation('armor',1), magic=False):
         if magic == False:
             print(attackerDict["name"] + "'s attack is ", (attackerDict["atk"] + weapon['atk']))
             print(defenderDict["name"] + "'s defense is ", (defenderDict["pdef"] + armor['pdef']))
