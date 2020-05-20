@@ -60,7 +60,9 @@ def stats(entity, player=False):
         print("level: " , entity["level"])
         print("Stage: " , entity["stageNum"])
         print("Weapon: " + entity['weapon']['name'])
+        print(entity['weapon'])
         print("Armor: " + entity['armor']['name'])
+        print(entity['armor'])
     print("Health: " , entity["health"])
     print("Attack: ", entity['atk'])
     print("Magical Attack: ", entity['matk'])
@@ -281,12 +283,18 @@ def roomGenerator(playerDictionary, stageNumber):
             print(attackerDict["name"] + "'s attack is ", (attackerDict["atk"] + weapon['atk']))
             print(defenderDict["name"] + "'s defense is ", (defenderDict["pdef"] + armor['pdef']))
             print(attackerDict['name'] + " attacks with their " + weapon['name'])
-            return attackerDict["atk"] + weapon['atk'] - defenderDict["pdef"] - armor['pdef']
+            if random.randint(0,50) == 34:
+                return attackerDict["atk"] + weapon['atk']
+            else:
+                return attackerDict["atk"] + weapon['atk'] - defenderDict["pdef"] - armor['pdef']
         else:
             print(attackerDict["name"] + "'s attack is ", (attackerDict["matk"] + weapon['matk']))
             print(defenderDict["name"] + "'s defense is ", (defenderDict["mdef"]  + armor['mdef']))
             print(attackerDict['name'] + " attacks with their " + weapon['name'])
-            return attackerDict["matk"] + weapon['matk'] - defenderDict["mdef"] - armor['mdef']
+            if random.randint(0,50) == 34:
+                return attackerDict["matk"] + weapon['matk']
+            else:
+                return attackerDict["matk"] + weapon['matk'] - defenderDict["mdef"] - armor['mdef']
 
     def playerAttack(magic, enemyDicts, playerDictionary):
         clear()
@@ -365,7 +373,7 @@ def roomGenerator(playerDictionary, stageNumber):
         print("The enemies are attacking!!!")
         for i in range(1, 1 + len(enemyDicts)):
             if enemyDicts[i]['health'] > 0:
-                damage = damageCalculator(attackerDict=enemyDicts[i],defenderDict=playerDictionary)
+                damage = damageCalculator(attackerDict=enemyDicts[i],defenderDict=playerDictionary,magic=random.choice([True,False]))
                 if damage > 0:
                     playerDictionary['health'] -= damage
         print("You are at ", playerDictionary['health'], " health!")
