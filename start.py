@@ -36,14 +36,13 @@ def createPlayer():
     "stageNum":1}
 
     def playerQuestions():
-        statDict = {"att":0}
-        statDict["att"] = input("If you live in a rural area, enter 3, but if in a city area, enter 0 ")
         while True:
-            if(statDict["att"] == 3):
-                print("Rural area. Your physical attack increased by 1." + (playerDictionary["atk"] + 1))
+            statDict = input("Do you live in a rural area or a city area? ")
+            if(statDict == "rural" or statDict == "Rural"):
+                print("Rural area. Your physical attack increased by 1." + (playerDictionary["atk"] , 1))
                 break
-            elif(statDict["att"] == 0):
-                print("You live in a city area. Physical defense increases by 1." + (playerDictionary["pdef"] + 1))
+            elif(statDict == "city" or statDict == "City"):
+                print("You live in a city area. Physical defense increases by 1." + (playerDictionary["pdef"] , 1))
                 break
             else:
                 print("Not a valid input.")
@@ -51,10 +50,10 @@ def createPlayer():
         
         playerPref = input("Were you more into academics or sports?")
         while True:
-            if(playerPref == "academics"):
+            if(playerPref == "academics" or playerPref == "Academics"):
                 print("You were more interested in academics. Your magic attack raised by 1." + (playerDictionary["matk"] + 1))
                 break
-            elif(playerPref == "sports"):
+            elif(playerPref == "sports" or playerPref == "Sports"):
                 print("You were more interested in sports. Your health increased by 2." + (playerDictionary["health"] + 2))
                 break
             else:
