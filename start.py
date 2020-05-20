@@ -294,7 +294,7 @@ def roomGenerator(playerDictionary, stageNumber):
         for i in range(1, len(enemyDicts) + 1):
             print("To attack " + enemyDicts[i]['name'] + ", HP: ", enemyDicts[i]["health"] ,", enter ", i)
         while True:
-            playerTarget = input()
+            playerTarget = int(input())
             if playerTarget in [1, 2, 3] and enemyDicts[playerTarget]['health'] == 0:
                 break
             else: 
@@ -353,7 +353,7 @@ def gearGiver():
     print("You found: " + player['weapon']['name'])
     print(player['weapon']['name'] + ", Attack: " , player['weapon']['atk'], ", Magic Attack: ", player['weapon']['matk'])
     print("You found: " + player['armor']['name'])
-    print(player['weapon']['name'] + ", Defense: " , player['armor']['pdef'], ", Magic Defense: ", player['armor']['mdef'])
+    print(player['armor']['name'] + ", Defense: " , player['armor']['pdef'], ", Magic Defense: ", player['armor']['mdef'])
         
 #Actual game and stuff starts here
 while True:
