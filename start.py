@@ -288,7 +288,7 @@ def roomGenerator(playerDictionary, stageNumber):
             print(attackerDict['name'] + " attacks with their " + weapon['name'])
             return attackerDict["matk"] + weapon['matk'] - defenderDict["mdef"] + armor['mdef']
 
-    def playerAttack(magic):
+    def playerAttack(magic, enemyDicts, playerDictionary):
         clear()
         print("Choose an enemy to attack!")
         for i in range(1, len(enemyDicts) + 1):
@@ -301,8 +301,9 @@ def roomGenerator(playerDictionary, stageNumber):
                 print("Choose a valid target!")
         clear()
         enemyDicts[playerTarget]['health'] -= damageCalculator(playerDictionary, playerDictionary['weapon'],enemyDicts[playerTarget], magic=magic)
-        if enemyDicts[playerTarget]['health'] <= 0:
-            enemies -= 1
+        print(enemyDicts[playerTarget]['name'] + " is at ", enemyDicts[playerTarget]['health'], " health!")
+        input("Press enter to continue...")
+        return (enemyDicts, playerTarget)
 
     #Battle Sequence
     while True:
@@ -310,10 +311,16 @@ def roomGenerator(playerDictionary, stageNumber):
         temporaryDefense = {"pdef": 0, "mdef":0}
         playerAction = input("Are you going to 'ATTACK', 'MAGIC ATTACK', 'DEFEND', or look at someone's 'STATS'? ")
         if playerAction.lower() == 'attack':
-            playerAttack(magic=False)
+            playerAction = playerAttack(False, enemyDicts, playerDictionary)
+            enemyDicts = playerAction[0]
+            if enemyDicts[playerAction[1]]['health'] <= 0:
+                enemies -1
         
         elif playerAction.lower() == 'magic attack':
-            playerAttack(magic=True)
+            playerAction = playerAttack(True, enemyDicts, playerDictionary)
+            enemyDicts = playerAction[0]
+            if enemyDicts[playerAction[1]]['health'] <= 0:
+                enemies -1
 
         elif playerAction.lower() == 'defend':
             print("You prepare yourself for the enemy's onslaught. Your defense increases!")
