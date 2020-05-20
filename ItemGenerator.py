@@ -1,5 +1,6 @@
 import random
 def itemCreation(playerLevel:5):
+    '''Creates a random item based on player level'''
 
     def itemNameGenerator(category):
         if category == 'Sword':
