@@ -50,6 +50,18 @@ def createPlayer():
     #playerQuestions()
     return(playerDictionary)
 
+def stats(entity, player=False):
+    print("Name: " + entity["name"])
+    if player == True:
+        print("Your level is: " , entity["level"])
+        print("Beginning at stage: " , entity["stageNum"])
+        print("Your weapon is: " + entity['weapon']['name'])
+        print("Your armor is: " + entity['armor']['name'])
+    print("Your health is: " , entity["health"])
+    print("Your physical defense is: " , entity["pdef"])
+    print("Your magical defense: " , entity["mdef"])
+    print("Your attack power is: " , entity["atk"])
+    print("Your magical attack power is: " , entity["matk"])
 
 
 #Enemy Generator function
