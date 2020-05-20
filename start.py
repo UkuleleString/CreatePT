@@ -49,16 +49,7 @@ def createPlayer():
             
     #playerQuestions()
     return(playerDictionary)
-player = createPlayer()
-def stats():
-    print(player["name"])
-    print("Your level is: " , player["level"])
-    print("Your health is: " , player["health"])
-    print("Your physical defense is: " , player["pdef"])
-    print("Your magical defense: " , player["mdef"])
-    print("Your attack power is: " , player["atk"])
-    print("Your magical attack power is: " , player["matk"])
-    print("Beginning at stage: " , player["stageNum"])
+
 
 
 #Enemy Generator function
@@ -350,6 +341,7 @@ print("Your quest for blood has brought you to the lair of Gerasis.")
 print("You must fight and rise through the 14 levels of the lair before you can defeat him once and for all.")
 print("Good luck, brave warrior!")
 print(" ")
+player = createPlayer()
 stats()
 for i in range(15):
     roomGenerator(player, i)
