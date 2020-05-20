@@ -300,7 +300,7 @@ def roomGenerator(playerDictionary, stageNumber):
             else: 
                 print("Choose a valid target!")
         clear()
-        enemyDicts[playerTarget]['health'] -= damageCalculator(playerDictionary, playerDictionary['weapon'],enemyDicts[playerTarget], magic)
+        enemyDicts[playerTarget]['health'] -= damageCalculator(playerDictionary, playerDictionary['weapon'],enemyDicts[playerTarget], magic=magic)
         if enemyDicts[playerTarget]['health'] <= 0:
             enemies -= 1
 
